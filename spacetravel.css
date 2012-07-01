@@ -1,0 +1,130 @@
+body { 
+    background: #fff; 
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+#content {
+    padding-left: 10%;
+    width: 75%;
+}
+
+#banner {
+    padding: 3px;
+    margin: 0px;
+    background: #DCDAE5;
+}
+
+h1#main_heading {
+    font-size: 22px;
+    text-align: center;
+/*    padding-left: 37%;*/
+}
+
+#error {
+    color: red;
+}
+
+#traveler-form {
+    margin-bottom: 20px;
+}
+
+.formstyle {
+    width: 800px;
+}
+
+.form-line {
+    line-height: 28px;
+}
+
+.formstyle label {
+    display:block;
+    text-align: right;
+    width: 290px;
+    clear: left;
+    float:left;
+    padding-right: 5px;
+}
+
+.widget {
+    float:left;
+    clear: left;
+    width: 550px;
+}
+
+.formstyle input {
+    width: 220px;
+}
+
+select {
+    background-color:#ddd;
+    width: 190px;
+}
+
+.help-symbol {
+    width: 5px !important;
+    color: blue;
+    cursor:move;
+}
+
+.help-symbol:hover {
+    text-decoration: underline;
+}
+
+.help-text {
+    padding-left: 200px;
+}
+
+
+#buttons {
+    margin-top: 5px;
+    padding-left: 292px;
+}
+
+#animate-button, .formstyle button {
+    float: left;
+    margin-right: 15px;
+    width:125px;
+    height:31px;
+    text-align:center;
+    line-height:31px;
+    font-weight:bold;
+    background-color:#ddd;
+}    
+
+#svg-viewer {
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+#animation {
+    clear: both;
+    float: left;
+    padding: 10px 0px 10px 0px;
+    width: 1000px;
+}
+
+#footer {
+    clear: both;
+    padding: 3px;
+    margin: 0px;
+    background: #DCDAE5;
+}
+
+#footer p {
+/*    padding-left: 20%;*/
+    text-align: center;
+}
+
+#menu ul
+{
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+}
+
+#menu ul li {
+    display: inline;    
+    padding-right: 20px;
+}
