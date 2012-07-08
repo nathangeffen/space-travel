@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+ <semantics>
+  <mrow>
+   <mrow>
+    <mi>a</mi>
+    <mo stretchy="false">=</mo>
+    <mfrac>
+     <mi>s</mi>
+     <mrow>
+      <mrow>
+       <msup>
+        <mi>t</mi>
+        <mn>2</mn>
+       </msup>
+       <mo stretchy="false">/</mo>
+       <mn>4</mn>
+      </mrow>
+     </mrow>
+    </mfrac>
+   </mrow>
+  </mrow>
+  <annotation encoding="StarMath 5.0">a = s over {t^2/4}</annotation>
+ </semantics>
+</math>

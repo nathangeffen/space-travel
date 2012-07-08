@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+ <semantics>
+  <mrow>
+   <mfrac>
+    <mrow>
+     <mi mathvariant="italic">cvt</mi>
+    </mrow>
+    <mrow>
+     <mrow>
+      <mi>c</mi>
+      <mo stretchy="false">+</mo>
+      <msqrt>
+       <mrow>
+        <mo stretchy="false">(</mo>
+        <mrow>
+         <mrow>
+          <msup>
+           <mi>c</mi>
+           <mn>2</mn>
+          </msup>
+          <mo stretchy="false">−</mo>
+          <msup>
+           <mi>v</mi>
+           <mn>2</mn>
+          </msup>
+         </mrow>
+        </mrow>
+        <mo stretchy="false">)</mo>
+       </mrow>
+      </msqrt>
+     </mrow>
+    </mrow>
+   </mfrac>
+  </mrow>
+  <annotation encoding="StarMath 5.0">{cvt} over {c + sqrt(c^2-v^2)} </annotation>
+ </semantics>
+</math>

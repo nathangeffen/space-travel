@@ -38,7 +38,7 @@ function Traveler(form) {
             primary : true,
             min_val : 100,
             min_error : "This calculator is quite useless for such small distances. Try travel a bit further.",
-            help_text : HelpText.distance
+            help_text : true
         },
         acceleration : 
         {
@@ -60,7 +60,7 @@ function Traveler(form) {
             max_val : SPEED_OF_LIGHT - 0.001,
             max_error : "Is your spaceship on steroids? You can't accelerate so quickly.",
             def_val : "9.8",
-            help_text : HelpText.acceleration
+            help_text : true
         },
         max_velocity : 
         {
@@ -83,7 +83,7 @@ function Traveler(form) {
             min_error : "Your velocity is too small. At this rate you won't get out your front door.",
             max_val : SPEED_OF_LIGHT - 0.001,
             max_error : "You have been watching too much Star Trek. Velocity must be less than the speed of light.",
-            help_text : HelpText.max_velocity
+            help_text : true
         },
         observer_time : 
         {
@@ -103,7 +103,7 @@ function Traveler(form) {
             changed : false,
             set : false,
             primary : false,
-            help_text : HelpText.observer_time
+            help_text : true
         },
         traveler_time : 
         {
@@ -123,11 +123,11 @@ function Traveler(form) {
             changed : false,
             set : false,
             primary : false,
-            help_text : HelpText.traveler_time
+            help_text : true
         },
         spacecraft_mass :
         {
-            lbl : "Spacecraft mass",
+            lbl : "Spacecraft mass at launch",
             value : "",
             calc : null,
             units : 
@@ -139,8 +139,8 @@ function Traveler(form) {
             changed : false,
             set : false,
             primary : false,
-            def_val : "110000",
-            help_text : HelpText.spacecraft_mass
+            def_val : "2000000",
+            help_text : true
         },
         energy : 
         {
@@ -159,7 +159,7 @@ function Traveler(form) {
             changed : false,
             set : false,
             primary : false,
-            help_text : HelpText.energy
+            help_text : true
         },
         fuel_conversion_rate : 
         {
@@ -175,7 +175,7 @@ function Traveler(form) {
             set : false,
             primary : true,
             def_val : "0.008",
-            help_text : HelpText.fuel_conversion_rate
+            help_text : true
         },
         fuel_mass : 
         {
@@ -191,11 +191,11 @@ function Traveler(form) {
             changed : false,
             set : false,
             primary : false,
-            help_text : HelpText.fuel_mass
+            help_text : true
         },
         traveler_length : 
         {
-            lbl : "Traveler length relative to traveler",
+            lbl : "Length of spacecraft at start of journey",
             value : "",
             calc : calcTravelerLength,
             parameters : ["observer_length", "max_velocity"],
@@ -210,11 +210,11 @@ function Traveler(form) {
             set : false,
             primary : true,
             def_val : 1,
-            help_text : HelpText.traveler_length
+            help_text : true
         },
         observer_length : 
         {
-            lbl : "Shortest traveler length relative to observer",
+            lbl : "Shortest length of spacecraft for observer",
             value : "",
             calc : calcMinObserverLength,
             parameters : ["traveler_length", "max_velocity"],
@@ -228,7 +228,7 @@ function Traveler(form) {
             changed : false,
             set : false,
             primary : false,
-            help_text : HelpText.observer_length
+            help_text : true
         }
     };
     
@@ -322,21 +322,23 @@ Traveler.prototype.processOutput = function() {
         }
         html_snippet += "</select>" 
         if (this.fields[field].help_text) {
-            html_snippet += '&nbsp;<span '
-            html_snippet += 'id="help-symbol-' + field + '" ';
-            html_snippet += 'class="help-symbol" ';
-            html_snippet += 'onclick="toggleVisibility(';
-            html_snippet += "'help-" + field + "',";
-            html_snippet += "'help-symbol-" + field + "'";
-            html_snippet += ')">?+</span>';
+            if (document.getElementById("help-"+field)) {
+                html_snippet += '&nbsp;<span '
+                html_snippet += 'id="help-symbol-' + field + '" ';
+                html_snippet += 'class="help-symbol" ';
+                html_snippet += 'onclick="toggleVisibility(';
+                html_snippet += "'help-" + field + "',";
+                html_snippet += "'help-symbol-" + field + "'";
+                html_snippet += ')">?+</span>';
+            }
         }
         html_snippet += "</div>";
         if (this.fields[field].help_text) {
-            html_snippet += '<div style="display:none;" '
+            html_snippet += '<div style="display:none;" class="help-text" '
             html_snippet += 'id="help-' + field + '">';
-            html_snippet +='<p class="help-text">';
-            html_snippet += this.fields[field].help_text
-            html_snippet +='</p>';
+            var help_text_field = document.getElementById("help-"+field);
+            if (help_text_field)
+                html_snippet += help_text_field.innerHTML;
             html_snippet +='</div>';
         }
         document.getElementById("flds").innerHTML = html_snippet;

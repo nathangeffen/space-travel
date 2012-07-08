@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+ <semantics>
+  <mrow>
+   <mrow>
+    <mi>r</mi>
+    <mo stretchy="false">=</mo>
+    <mrow>
+     <mi>e</mi>
+     <mo stretchy="false">/</mo>
+     <msup>
+      <mi mathvariant="italic">mc</mi>
+      <mn>2</mn>
+     </msup>
+    </mrow>
+   </mrow>
+  </mrow>
+  <annotation encoding="StarMath 5.0">r=e/mc^2</annotation>
+ </semantics>
+</math>

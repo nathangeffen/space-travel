@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+ <semantics>
+  <mrow>
+   <mrow>
+    <mi>a</mi>
+    <mo stretchy="false">=</mo>
+    <mfrac>
+     <mn>2v</mn>
+     <mi>t</mi>
+    </mfrac>
+   </mrow>
+  </mrow>
+  <annotation encoding="StarMath 5.0">a=2v over t</annotation>
+ </semantics>
+</math>

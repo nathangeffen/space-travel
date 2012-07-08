@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+ <semantics>
+  <mrow>
+   <mrow>
+    <mi>t</mi>
+    <mo stretchy="false">=</mo>
+    <mn>2</mn>
+   </mrow>
+   <msqrt>
+    <mrow>
+     <mrow>
+      <mfrac>
+       <msup>
+        <mi>c</mi>
+        <mn>2</mn>
+       </msup>
+       <msup>
+        <mi>a</mi>
+        <mn>2</mn>
+       </msup>
+      </mfrac>
+     </mrow>
+     <mfenced open="[" close="]">
+      <mrow>
+       <mrow>
+        <msup>
+         <mfenced open="(" close=")">
+          <mrow>
+           <mrow>
+            <mfrac>
+             <mi>d</mi>
+             <mrow>
+              <mn>2</mn>
+              <mrow>
+               <mrow>
+                <msup>
+                 <mi>c</mi>
+                 <mn>2</mn>
+                </msup>
+                <mo stretchy="false">/</mo>
+                <mi>a</mi>
+               </mrow>
+              </mrow>
+             </mrow>
+            </mfrac>
+            <mo stretchy="false">+</mo>
+            <mn>1</mn>
+           </mrow>
+          </mrow>
+         </mfenced>
+         <mn>2</mn>
+        </msup>
+        <mo stretchy="false">−</mo>
+        <mn>1</mn>
+       </mrow>
+      </mrow>
+     </mfenced>
+    </mrow>
+   </msqrt>
+  </mrow>
+  <annotation encoding="StarMath 5.0">t = 2 sqrt{ {c^2 over a^2} left [ left (d over {2{c^2/a}}+1 right )^2 - 1 right ]  } </annotation>
+ </semantics>
+</math>

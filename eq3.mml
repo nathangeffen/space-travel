@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+ <semantics>
+  <mrow>
+   <mrow>
+    <mi>a</mi>
+    <mo stretchy="false">=</mo>
+    <mfrac>
+     <msup>
+      <mi>v</mi>
+      <mn>2</mn>
+     </msup>
+     <mi>s</mi>
+    </mfrac>
+   </mrow>
+  </mrow>
+  <annotation encoding="StarMath 5.0">a = v^2 over s</annotation>
+ </semantics>
+</math>

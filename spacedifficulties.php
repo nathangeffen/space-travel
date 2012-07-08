@@ -20,7 +20,9 @@
 ?>
 
 <div id="content">
-<p>Text comes here.</p>
+<?php 
+  include "spacetraveldifficulties.html";
+?>
 </div>
 
 

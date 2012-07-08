@@ -70,16 +70,18 @@ identical.  It's just not possible, unless Einstein got it all wrong.</p>
 <p>Ridley Scott's Alien prologue, Prometheus is suspenseful and fun, albeit not nearly as good as Alien. But the movie's science is awful. Besides its scepticism of evolution with natural selection, its depiction of space travel is absurd.</p> 
 
    <p>
-In two years, our protagonists travel 34 light years. Even in the most optimistic scenario that's extremely improbable. But for that massive onboard fuel-driven spacecraft it's just ridiculous. Also, the spacecraft would have to accelerate and decelerate at more than 4g for the entire two year journey. Even accounting for the protagonists spending most of their travel time in stasis, that seems a trifle too much for even someone with James Bond's constitution to tolerate. <em><a
+In two years, our protagonists travel 34 light years. Even in the most optimistic scenario that's extremely improbable. But for that massive onboard fuel-driven spacecraft it's just ridiculous. Also, the spacecraft would have to accelerate and decelerate at more than 4g for the entire two year journey. That seems a trifle too much for even someone with James Bond's constitution to tolerate.<em><a
 href="http://www.oup.com/us/catalog/general/subject/LifeSciences/Physiology/?view=usa&ci=9780195165012">The
 Biology of Human Survival: Life and Death in Extreme
 Environments<a/></em> By Claude A. Piantadosi states:</p> 
 
 <blockquote> <p> Human volunteers have tolerated 1.5g for seven days
-with no appareny ill effects. However, after just twenty-four hours at
+with no apparent ill effects. However, after just twenty-four hours at
 2g, evidence of significant fluid imbalance is detectable. At 3g to 4g
 fatigue is limiting, and above 4g cardiovascular factors limit g
 tolerance. (p. 200) </p> </blockquote>
+
+  <p>Then again, they are in stasis for most of the journey. Perhaps it will one day be possible to invent stasis technology that allows humans to tolerate any acceleration. It seems highly improbable though.</p>
 
 </div>
 

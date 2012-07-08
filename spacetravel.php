@@ -61,7 +61,6 @@ if(isset($_GET["field"]) && !empty($_GET["field"]) &&
 <!--Javascript sources-->
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
-<script type="text/javascript" src="spacehelp.js"></script>
 <script type="text/javascript" src="spacetravel.js"></script>
 <script type="text/javascript" src="spaceanimation.js"></script>
 <script type="text/javascript" src="spacestart.js"></script>
@@ -75,9 +74,13 @@ if(isset($_GET["field"]) && !empty($_GET["field"]) &&
 
 <div id="content">
 
+<div class="text">
+
 <p>Do you want to travel to another planet? Or perhaps even another star system?</p>
 
-  <p>Then you can use this calculator to work out how long it will take you, how much energy your spacecraft needs and what your maximum velocity will be. If you travel close to the speed of light, you can also see how much time it will take from your point of view and from the point of view of the people back home on earth. You can also see how the length of your spacecraft will shorten for observers watching it from earth, if only they had powerful enough telescopes.</p>
+  <p>Then you can use this calculator to work out how long it will take you, how much energy your spacecraft needs and what your maximum velocity will be. If you travel close to the speed of light, you can also see how much time it will take from your point of view and from the point of view of the people on earth. You can also see how the length of your spacecraft will shorten for observers watching it from earth, if only they had powerful enough telescopes.</p>
+
+</div>
 
 <div id="traveler-form">
 
@@ -205,6 +208,10 @@ Run
 
 <?php 
   include "spacefooter.php";
+?>
+
+<?php 
+  include "spacehelp.php";
 ?>
 
 

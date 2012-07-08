@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+ <semantics>
+  <mrow>
+   <mrow>
+    <msub>
+     <mi>l</mi>
+     <mn>0</mn>
+    </msub>
+    <mo stretchy="false">=</mo>
+    <mfrac>
+     <mi>l</mi>
+     <msqrt>
+      <mrow>
+       <mrow>
+        <mn>1</mn>
+        <mo stretchy="false">−</mo>
+        <mfrac>
+         <msup>
+          <mi>v</mi>
+          <mn>2</mn>
+         </msup>
+         <msup>
+          <mi>c</mi>
+          <mn>2</mn>
+         </msup>
+        </mfrac>
+       </mrow>
+      </mrow>
+     </msqrt>
+    </mfrac>
+   </mrow>
+  </mrow>
+  <annotation encoding="StarMath 5.0">l_0 = l over sqrt {1 - v^2 over c^2}</annotation>
+ </semantics>
+</math>

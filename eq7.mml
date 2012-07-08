@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+ <semantics>
+  <mrow>
+   <mrow>
+    <mi>t</mi>
+    <mo stretchy="false">=</mo>
+    <mrow>
+     <mfrac>
+      <mrow>
+       <mn>2c</mn>
+      </mrow>
+      <mrow>
+       <mi>a</mi>
+      </mrow>
+     </mfrac>
+    </mrow>
+   </mrow>
+   <msup>
+    <mi>cosh</mi>
+    <mrow>
+     <mo stretchy="false">−</mo>
+     <mn>1</mn>
+    </mrow>
+   </msup>
+   <mfenced open="[" close="]">
+    <mrow>
+     <mrow>
+      <mfrac>
+       <mrow>
+        <mi>d</mi>
+       </mrow>
+       <mrow>
+        <mn>2</mn>
+        <mrow>
+         <mrow>
+          <msup>
+           <mi>c</mi>
+           <mn>2</mn>
+          </msup>
+          <mo stretchy="false">/</mo>
+          <mi>a</mi>
+         </mrow>
+        </mrow>
+       </mrow>
+      </mfrac>
+      <mo stretchy="false">+</mo>
+      <mn>1</mn>
+     </mrow>
+    </mrow>
+   </mfenced>
+  </mrow>
+  <annotation encoding="StarMath 5.0">t = {{2c} over {a}} cosh^-1 left [ {d} over {2 {c^2/a} } + 1 right ]</annotation>
+ </semantics>
+</math>

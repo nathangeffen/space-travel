@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+ <semantics>
+  <mrow>
+   <mfrac>
+    <mrow>
+     <mi>c</mi>
+    </mrow>
+    <mrow>
+     <msqrt>
+      <mrow>
+       <mrow>
+        <mn>1</mn>
+        <mo stretchy="false">+</mo>
+        <mrow>
+         <mfrac>
+          <mrow>
+           <msup>
+            <mi>c</mi>
+            <mn>2</mn>
+           </msup>
+          </mrow>
+          <mrow>
+           <msup>
+            <mi>a</mi>
+            <mn>2</mn>
+           </msup>
+           <mrow>
+            <msup>
+             <mrow>
+              <mo stretchy="false">(</mo>
+              <mrow>
+               <mfrac>
+                <mrow>
+                 <mi>T</mi>
+                </mrow>
+                <mrow>
+                 <mn>2</mn>
+                </mrow>
+               </mfrac>
+              </mrow>
+              <mo stretchy="false">)</mo>
+             </mrow>
+             <mn>2</mn>
+            </msup>
+           </mrow>
+          </mrow>
+         </mfrac>
+        </mrow>
+       </mrow>
+      </mrow>
+     </msqrt>
+    </mrow>
+   </mfrac>
+  </mrow>
+  <annotation encoding="StarMath 5.0">{c} over {sqrt {1+{ {c^2} over {a^2{({T} over {2})^2}}}} }
+
+</annotation>
+ </semantics>
+</math>
