@@ -7,7 +7,7 @@ The space travel calculator uses special relativity equations to calculate from 
 - the maximum velocity the spaceship would reach and
 - the length dilation of the spacecraft from the observer's perspective.
 
-It also includes a homemade and simplistic animation that visualises the journey.
+It also includes a simplistic visualisation of the journey.
 
 ## Caution
 
@@ -20,8 +20,7 @@ calculation errors in this project.
 
 Pull the contents of this repository into a directory and
 configure a web server to point to it. If you're using apache2, you
-could simply copy everything into a folder of your default web directory
-(usually /var/www or /var/web). 
+could simply copy everything into a folder of your default web directory (usually /var/www or /var/web). 
 
 Then open the directory root in your browser. An index.html page
 redirects you to *spacetravel.php*.
@@ -40,7 +39,7 @@ redirects you to *spacetravel.php*.
 
 - spacestart.js: Javascript that calls routines in both the above Javascript files.
 
-- spacedifficulties.php, spacedifficulties.html and spacedifficulties.md: Essay on the difficulties of space travel. The MD file is the Markdown file that is used to generate the HTML one, which is simply included by the PHP file.
+- spacedifficulties.php, spacedifficulties.html and spacedifficulties.md: Essay on the difficulties of space travel. The MD file is the Markdown file that is used to generate, using Pandoc, the HTML one. The HTML file is included by the PHP file.
 
 - spacehollywood.php: Some notes on space travel in Hollywood movies.
 
@@ -52,7 +51,7 @@ redirects you to *spacetravel.php*.
 
 ### Other files
 
-- eq1 to eq12.mml: Mathml files for equations in the documentation.
+- eq1 to eq12.mml: MathML files for equations in the documentation. These were created using OpenOffice's equation editor. 
 - COPYING: Copyright notice for this project.
 - css and js folders: jquerygui folders
 - favicon-*.png and favicon.ico: Favourite icon files.

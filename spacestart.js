@@ -1,3 +1,8 @@
+/*
+  This integrates the calculation and animation code. It hooks the 
+  run, calculate and clear buttons to their event code.
+*/
+
 var animation = new Animation('svg-viewer', 0, 800);
 var traveler = new Traveler();
 

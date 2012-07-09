@@ -1,3 +1,10 @@
+/*
+  This is the code responsible for running the animation on 
+  the calculator page.
+*/
+
+/* This class manages the observer and traveler clocks */
+
 Clock = function(clockId, time, x, y) {
 
     this.formattedTime = function(time) {
@@ -25,8 +32,14 @@ Clock = function(clockId, time, x, y) {
     this.clock.appendChild(document.createTextNode(this.formattedTime(time)));    
 }
 
+
+/*
+  This class manages the animation.
+*/
+
 Animation = function(parent, x_start, width) {
 
+    
     this.initialize = function() {
         this.running = false;
         this.svg = document.getElementById(parent); 
@@ -57,8 +70,10 @@ Animation = function(parent, x_start, width) {
     this.run  = function(totalObserverTime, totalTravelerTime, totalDistance, 
                          acceleration, iterations, interval) {
 
-        if (this.running)
+        if (this.running) {
+            clearInterval(this.timer);
             this.initialize();
+        }
 
         this.running = true;
 

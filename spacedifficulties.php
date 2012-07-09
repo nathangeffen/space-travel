@@ -19,12 +19,17 @@
   include "spaceheader.php";
 ?>
 
+
+
 <div id="content">
+
+<div class="text">
 <?php 
-  include "spacetraveldifficulties.html";
+  include "spacedifficulties.html";
 ?>
 </div>
 
+</div>
 
 <?php 
   include "spacefooter.php";

@@ -202,9 +202,51 @@ Run
 <input id="milliseconds" type="text" value="50" maxlength="4" size="4" />
 
 </form>
+
+</div>
+
+<div id="bug-list">
+
+<div class="text">
+
+<h2>Known problems</h2>
+
+<ul>
+
+<li>
+
+<p>Sometimes the calculator does not correctly update fields. To be safe, it is best to click clear between calculations. I intend to fix this.</p>
+
+</li>
+
+<li>
+
+<p>The animation spacecraft is at a different scale to the distance between
+the observer and destination. Even for the shortest space travel
+distances, for example the earth to the moon, the spacecraft would
+occupy less than a pixel. This problem will not be fixed.</p>
+
+</li>
+
+<li>
+
+<p> As an object moves further into the distance it appears smaller to
+an observer. This change in perspective distance is not represented in
+the animation. The reduction in the spacecraft length, from the
+observer&#39;s framework at velocities approaching the speed of light is
+an entirely different </p>
+
+</li>
+
+
+</ul>
+
 </div>
 
 </div>
+
+</div>
+
 
 <?php 
   include "spacefooter.php";

@@ -1,6 +1,4 @@
-/* 
-   Learn computer science example.
-   
+/*    
    This file implements the Traveler class. It manages the time and
    length dilation form and calculates time and length dilations.
 */
@@ -15,6 +13,12 @@ PARSEC = 30856780000000000;
 
 
 function Traveler(form) {
+
+    /* 
+       This data structure is parsed by the main loop of the programme to 
+       generate the calculator form and carry out the calculations.
+    */
+
     this.fields = {
         distance : 
         {
@@ -392,6 +396,10 @@ Traveler.prototype.calculate = function() {
     }
 };
 
+/*
+  Clears the calculator form and sets fields to their default values.
+*/
+
 Traveler.prototype.clear = function() 
 {
     for (f in this.fields) {
@@ -480,19 +488,6 @@ Traveler.prototype.updateMetric = function(e, t) {
             oldUnitValue / newUnitValue;
     }
 };
-
-
-Traveler.prototype.animate = function() {
-    var currentTime = new Date();
-    currentTime.setTime(currentTime.getTime()+1000000000*1000);
-    document.getElementById("clock1").firstChild.nodeValue = 
-        currentTime.getFullYear() + "-" + 
-        zeroPad(currentTime.getMonth(), 2) + "-" +
-        zeroPad(currentTime.getDay(), 2) + "-" +
-        zeroPad(currentTime.getHours(), 2) + ":" + 
-        zeroPad(currentTime.getMinutes(), 2) + ":" +
-        zeroPad(currentTime.getSeconds(), 2);
-}
 
 
 /* Calculation functions */
