@@ -9,18 +9,21 @@ The space travel calculator uses special relativity equations to calculate from 
 
 It also includes a simplistic visualisation of the journey.
 
+The space travel calculator is implemented here:
+http://spacetravel.nathangeffen.webfactional.com/spacetravel.php
+
 ## Caution
 
 The main purpose of this project was so that I could learn several web
 technologies and have fun at the same time. I am not a physicist or
 engineer and it's quite possible there are misconceptions or glaring
-calculation errors in this project. 
+calculation errors in this project.
 
 ## Installation
 
 Pull the contents of this repository into a directory and
 configure a web server to point to it. If you're using apache2, you
-could simply copy everything into a folder of your default web directory (usually /var/www or /var/web). 
+could simply copy everything into a folder of your default web directory (usually /var/www or /var/web).
 
 Then open the directory root in your browser. An index.html page
 redirects you to *spacetravel.php*.
@@ -35,7 +38,7 @@ redirects you to *spacetravel.php*.
 
 - spaceanimation.js: Javascript that handles the animation.
 
-- animation.svg: Scalar Vector Graphics file of a rocket, used by both spacetravel.php and spaceanimation.js.      
+- animation.svg: Scalar Vector Graphics file of a rocket, used by both spacetravel.php and spaceanimation.js.
 
 - spacestart.js: Javascript that calls routines in both the above Javascript files.
 
@@ -51,10 +54,9 @@ redirects you to *spacetravel.php*.
 
 ### Other files
 
-- eq1 to eq12.mml: MathML files for equations in the documentation. These were created using OpenOffice's equation editor. 
+- eq1 to eq12.mml: MathML files for equations in the documentation. These were created using OpenOffice's equation editor.
 - COPYING: Copyright notice for this project.
 - css and js folders: jquerygui folders
 - favicon-*.png and favicon.ico: Favourite icon files.
 - index.html: Redirects to spacetravel.php
 - README: This file
-
