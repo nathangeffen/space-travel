@@ -142,7 +142,7 @@ function Traveler(form) {
             },
             changed : false,
             set : false,
-            primary : false,
+            primary : true,
             def_val : "2000000",
             help_text : true
         },
@@ -373,7 +373,10 @@ Traveler.prototype.calculate = function() {
                     var parameters = {};
                     for (i = 0; i < this.fields[f].parameters.length; i++) {
                         parm = this.fields[f].parameters[i]
-                        if (this.fields[parm].value) {
+                        if (this.fields[parm].value &&
+                            (this.fields[parm].changed || 
+                             this.fields[parm].primary || 
+                             this.fields[parm].set)) {
                             parameters[parm] = this.fields[parm].value;
                         } else {
                             ++missing;

@@ -215,12 +215,6 @@ Run
 
 <li>
 
-<p>Sometimes the calculator does not correctly update fields. To be safe, it is best to click clear between calculations. I intend to fix this.</p>
-
-</li>
-
-<li>
-
 <p>The animation spacecraft is at a different scale to the distance between
 the observer and destination. Even for the shortest space travel
 distances, for example the earth to the moon, the spacecraft would
@@ -232,11 +226,21 @@ occupy less than a pixel. This problem will not be fixed.</p>
 
 <p> As an object moves further into the distance it appears smaller to
 an observer. This change in perspective distance is not represented in
-the animation. The reduction in the spacecraft length, from the
+the animation. The reduction in the spacecraft length from the
 observer&#39;s framework at velocities approaching the speed of light is
-an entirely different </p>
+an entirely different concept to perspective distance.</p>
 
 </li>
+
+<li>
+
+<p> If you set the iterations on the animation to a low number,
+e.g. less than 20, the animation&#39;s spaceship time will not be
+calculated accurately if the observer and traveler times diverge 
+substantially.</p>
+
+</li>
+
 
 
 </ul>
