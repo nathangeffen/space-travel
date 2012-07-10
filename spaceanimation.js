@@ -65,6 +65,8 @@ Animation = function(parent, x_start, width) {
 
         this.traveler = new Clock("traveler-clock", startTime, this.traveler_start + 10, 40);
         this.svg.appendChild(this.traveler.clock);
+        this.prev_observer_time = 0;
+        this.prev_traveler_time = 0;
     }
 
     this.run  = function(totalObserverTime, totalTravelerTime, totalDistance, 
@@ -95,13 +97,27 @@ Animation = function(parent, x_start, width) {
         var parameters = {};
         parameters["observer_time_elapsed"] = this.iterationNumber * 
             (this.totalObserverTime / this.totalIterations);
+
         parameters["observer_time"] = this.totalObserverTime;
         parameters["acceleration"] = this.acceleration;
 
         parameters["distance"] = calcDistance(parameters);
         parameters["velocity"] = calcVelocity(parameters);
-        var traveler_time = (parameters["distance"] / this.totalDistance) * 
-            this.totalTravelerTime;
+
+        // This next statement is an ugly hack. 
+        // All relativity calculations
+        // should really be in spacetravel.js and generically done.
+        // But it would involve quite a bit of refactoring to do it
+        // and I'm too lazy. Anyway, this works.
+        var traveler_time = this.prev_traveler_time + 
+            (parameters["observer_time_elapsed"] - 
+             this.prev_observer_time) *
+            Math.sqrt(1 - parameters["velocity"] *
+                      parameters["velocity"] /
+                      SPEED_OF_LIGHT_SQUARED);
+
+        this.prev_observer_time = parameters["observer_time_elapsed"];
+        this.prev_traveler_time = traveler_time;
         parameters["traveler_length"] = 1;
         parameters["observer_length"] = calcObserverLength(parameters);
         return {"observer_time" : parameters["observer_time_elapsed"],
