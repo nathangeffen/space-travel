@@ -115,6 +115,10 @@ select {
     width: 1000px;
 }
 
+#bug-list {
+    clear: both;
+}
+
 #footer {
     clear: both;
     padding: 3px;
