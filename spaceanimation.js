@@ -29,6 +29,7 @@ Clock = function(clockId, time, x, y) {
     this.time.setTime(time.getTime());
     this.clock.setAttribute("x", x);
     this.clock.setAttribute("y", y);
+    this.clock.setAttribute("font-size", 10);
     this.clock.appendChild(document.createTextNode(this.formattedTime(time)));    
 }
 
