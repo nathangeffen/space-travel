@@ -60,3 +60,11 @@ redirects you to *spacetravel.php*.
 - favicon-*.png and favicon.ico: Favourite icon files.
 - index.html: Redirects to spacetravel.php
 - README: This file
+
+## Authors
+
+The Space Travel calculator was written by [Nathan Geffen](http://nathangeffen.webfactional.com/).
+
+Faizel Slamang drew the robot used in the simulation.
+
+
