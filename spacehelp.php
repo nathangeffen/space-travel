@@ -1,4 +1,37 @@
 
+<div id="help-text">
+
+<h2>Quick help</h2>
+
+<p>
+   This is the simplest use of the Space Travel calculator:
+</p>
+
+<ol>
+
+<li>
+
+Enter a distance to a planet or star. Don&#39;t know any? Then type 
+<em>Pr</em> and press the down arrow. The distance to Proxima Centauri appears. Select it. Try other places in space; there are several in the database.
+
+</li>
+
+<li>
+
+Click <em>Calculate</em>. The calculator determines the remaining 
+unfilled values.
+
+</li>
+
+<li>
+   Click <em>Run</em>. Watch the space rocket travel from earth to your destination. Also watch the clocks of the observer and the traveler. 
+</li>
+
+</ol>
+
+
+</div>
+
 <div id="help-distance" style="display:none">
 
 <p>

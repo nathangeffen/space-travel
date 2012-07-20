@@ -82,6 +82,38 @@ if(isset($_GET["field"]) && !empty($_GET["field"]) &&
 
 </div>
 
+<div id="quick-help">
+
+<h2>Quick help</h2>
+
+<p>
+   This is the simplest way to use the space travel calculator:
+</p>
+
+<ol>
+
+<li>
+
+Enter a distance to a planet or star. Don&#39;t know any? Then type 
+<em>Pr</em> and press the down arrow. The distance to Proxima Centauri appears. Select it and the distance will be filled in. Try other places in space.
+
+</li>
+
+<li>
+
+Click <em>Calculate</em>. The calculator determines the remaining 
+unfilled values.
+
+</li>
+
+<li>
+   Click <em>Run</em>. Watch the space rocket travel from earth to your destination. Also watch the clocks of the observer and the traveler. 
+</li>
+
+</ol>
+
+</div>
+
 <div id="traveler-form">
 
 <form name="time_dilation" class="formstyle">
