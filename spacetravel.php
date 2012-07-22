@@ -5,25 +5,27 @@
   autocompletion of the distance field. It gets values from the 
   database matching the query and returns them in JSON format.
 */
+
 if(isset($_GET["field"]) && !empty($_GET["field"]) &&
    isset($_GET["value"]) && !empty($_GET["value"])) {
 
   echo '[';
   $db = new SQLite3('dilation.sqlite');
+
   if ($db) {
     $value=htmlspecialchars($_GET["value"]);
     
-    if ($_GET["field"]=="distance") {
-      $qry = "SELECT * FROM distances WHERE place LIKE '" . SQLite3::escapeString ($value) . "%'" . 'ORDER BY place';
-    } else {
-      $qry = "SELECT * FROM velocities WHERE object LIKE '" . SQLite3::escapeString ($value) . "%'" . 'ORDER BY object';
-    }
+    $table = SQLite3::escapeString ($_GET["field"]);
+    
+    $qry = "SELECT * FROM " . $table . " WHERE name LIKE '" . SQLite3::escapeString ($value) . "%'" . ' ORDER BY name';
 
     $results = $db->query($qry);
 
 
+
     $i = 0;
     while($row = $results->fetchArray()) {
+
       if ($i > 0) {
         echo ', ';
       }

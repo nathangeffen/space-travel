@@ -36,7 +36,7 @@ function Traveler(form) {
                 "light-years": LIGHT_YEAR,
                 "parsec" : PARSEC
             },
-            ajaxValues : true,
+            ajaxValues : "distances",
             changed : false,
             set : false,
             primary : true,
@@ -79,7 +79,7 @@ function Traveler(form) {
                 "kilometers per second" : 1000,
                 "speed of light" : SPEED_OF_LIGHT
             },
-            ajaxValues : true,
+            ajaxValues : "velocities",
             changed : false,
             set : false,
             primary : false,
@@ -175,6 +175,7 @@ function Traveler(form) {
             {
                 "kg x m x m" : 1
             },
+            ajaxValues : "fuelrates",
             changed : false,
             set : false,
             primary : true,
@@ -430,7 +431,10 @@ Traveler.prototype.setChanged = function(e, t) {
 
 Traveler.prototype.keyup = function(e, t) {
     if (t.fields[e.id].ajaxValues) {
-        Traveler.prototype.showFieldValues(e.value, t, e.id);
+        Traveler.prototype.showFieldValues(e.value, 
+                                           t, 
+                                           e.id,
+                                           t.fields[e.id].ajaxValues);
     }
 }
 
@@ -439,7 +443,7 @@ Traveler.prototype.keyup = function(e, t) {
   to select values for the current field. 
 */
 
-Traveler.prototype.showFieldValues = function(str, t, id) {
+Traveler.prototype.showFieldValues = function(str, t, id, table) {
     var options = [];
     var alpha = /^([a-zA-Z ]+)/;
 
@@ -452,6 +456,7 @@ Traveler.prototype.showFieldValues = function(str, t, id) {
 
         xmlhttp.onreadystatechange=function()
         {
+
             if (xmlhttp.readyState==4 && xmlhttp.status==200)
             {
                 options = JSON.parse(xmlhttp.responseText);
@@ -468,7 +473,7 @@ Traveler.prototype.showFieldValues = function(str, t, id) {
             }
         };
 
-        xmlhttp.open("GET","spacetravel.php?field=" + id +"&value="+str,true);
+        xmlhttp.open("GET","spacetravel.php?field=" + table +"&value="+str,true);
         xmlhttp.send();            
     };
 }
