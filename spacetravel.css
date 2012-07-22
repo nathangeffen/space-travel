@@ -5,8 +5,8 @@ body {
 }
 
 #content {
-    padding-left: 10%;
-    width: 75%;
+    padding-left: 15%;
+    width: 70%;
 }
 
 .text {
@@ -15,14 +15,17 @@ body {
 }
 
 #quick-help {
-    position: absolute;
-    top:130px;
-    right:170px;
-    width: 250px;
-    margin: 5px;
-    padding: 5px;
+    font-size: 12px;
+    float: right;
+    width: 20%;
+    padding: 2px;
+/*    top:90px;
+    right:1%;
+
+*/
+
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
 }
 
 .help-text {

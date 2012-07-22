@@ -82,12 +82,6 @@ if(isset($_GET["field"]) && !empty($_GET["field"]) &&
 
   <p>Then you can use this calculator to work out how long it will take you, how much energy your spacecraft needs and what your maximum velocity will be. If you travel close to the speed of light, you can also see how much time it will take from your point of view and from the point of view of the people on earth. You can also see how the length of your spacecraft will shorten for observers watching it from earth, if only they had powerful enough telescopes.</p>
 
-</div>
-
-<div id="quick-help">
-
-<h2>Quick help</h2>
-
 <p>
    This is the simplest way to use the space travel calculator:
 </p>
@@ -113,6 +107,7 @@ unfilled values.
 </li>
 
 </ol>
+
 
 </div>
 
