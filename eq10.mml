@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <math xmlns="http://www.w3.org/1998/Math/MathML">
- <semantics>
   <mrow>
-   <mrow>
-    <mi>e</mi>
-    <mo stretchy="false">/</mo>
-    <msup>
-     <mi mathvariant="italic">rc</mi>
-     <mn>2</mn>
-    </msup>
-   </mrow>
+    <mfrac>
+      <mi>M</mi>
+      <mi>m</mi>
+    </mfrac>
+    <mo stretchy="false">=</mo>
+    <mfrac>
+      <mrow>
+        <mn>2</mn>
+        <mfrac>
+          <mi>v</mi>
+          <mi>c</mi>
+        </mfrac>
+      </mrow>
+      <mrow>
+        <mn>1</mn>
+        <mo stretchy="false">−</mo>
+        <mfrac>
+          <mi>v</mi>
+          <mi>c</mi>
+        </mfrac>
+      </mrow>
+    </mfrac>
   </mrow>
-  <annotation encoding="StarMath 5.0">e / rc^2</annotation>
- </semantics>
 </math>

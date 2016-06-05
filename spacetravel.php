@@ -1,8 +1,8 @@
 <?php
 
 /*
-  This section of the PHP code is executed upon a GET query on 
-  autocompletion of the distance field. It gets values from the 
+  This section of the PHP code is executed upon a GET query on
+  autocompletion of the distance field. It gets values from the
   database matching the query and returns them in JSON format.
 */
 
@@ -14,9 +14,9 @@ if(isset($_GET["field"]) && !empty($_GET["field"]) &&
 
   if ($db) {
     $value=htmlspecialchars($_GET["value"]);
-    
+
     $table = SQLite3::escapeString ($_GET["field"]);
-    
+
     $qry = "SELECT * FROM " . $table . " WHERE name LIKE '" . SQLite3::escapeString ($value) . "%'" . ' ORDER BY name';
 
     $results = $db->query($qry);
@@ -56,9 +56,9 @@ if(isset($_GET["field"]) && !empty($_GET["field"]) &&
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link type="text/css" href="spacetravel.css" rel="stylesheet">
-<title>Space travel calculator</title> 
+<title>Space travel calculator</title>
 
-<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="Stylesheet" />	
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="Stylesheet" />
 
 <!--Javascript sources-->
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
@@ -70,7 +70,7 @@ if(isset($_GET["field"]) && !empty($_GET["field"]) &&
 
 <body>
 
-<?php 
+<?php
   include "spaceheader.php";
 ?>
 
@@ -90,20 +90,20 @@ if(isset($_GET["field"]) && !empty($_GET["field"]) &&
 
 <li>
 
-Enter a distance to a planet or star. Don&#39;t know any? Then type 
+Enter a distance to a planet or star. Don&#39;t know any? Then type
 <em>Pr</em> and press the down arrow. The distance to Proxima Centauri appears. Select it and the distance will be filled in. Try other places in space.
 
 </li>
 
 <li>
 
-Click <em>Calculate</em>. The calculator determines the remaining 
+Click <em>Calculate</em>. The calculator determines the remaining
 unfilled values.
 
 </li>
 
 <li>
-   Click <em>Run</em>. Watch the space rocket travel from earth to your destination. Also watch the clocks of the observer and the traveler. 
+   Click <em>Run</em>. Watch the space rocket travel from earth to your destination. Also watch the clocks of the observer and the traveler.
 </li>
 
 </ol>
@@ -123,10 +123,10 @@ unfilled values.
 
 <div id="buttons">
 
-<button onclick="calculate()" type="button" 
+<button onclick="calculate()" type="button"
   title="Calculate unfilled fields">Calculate</button>
 
-<button onclick="clearFields()" type="button" 
+<button onclick="clearFields()" type="button"
   title="Clears the fields and sets some of them to default values">Clear</button>
 
 </div>
@@ -176,7 +176,7 @@ unfilled values.
   </svg>
 
   <svg id="rocket" x="70" y="70">
-  
+
   <g id="rocket-g">
     <path
        style="fill:#0000ff"
@@ -265,13 +265,34 @@ an entirely different concept to perspective distance.</p>
 
 <p> If you set the iterations on the animation to a low number,
 e.g. less than 20, the animation&#39;s spaceship time will not be
-calculated accurately if the observer and traveler times diverge 
+calculated accurately if the observer and traveler times diverge
 substantially.</p>
 
 </li>
 
 
 
+</ul>
+
+<p>
+
+A bug fix was made in June 2016. The calculation for the fuel needed for the
+trip did not take into account conservation of momentum. These two webpages
+helped me correct the error and I am grateful to the various people contributed
+the notes that helped me fix this (Physics Stack Exchange users user2096078,
+Qmechanic and udrv, Don Koks for the Relativistic Rocket, and John F who emailed
+me) :
+
+</p>
+
+<ul>
+  <li><a href="http://math.ucr.edu/home/baez/physics/Relativity/SR/Rocket/rocket.html">The
+    Relativistic Rocket</a>
+  </li>
+  <li>
+    <a href="http://physics.stackexchange.com/questions/258678/relativistic-rocket-fuel-requirements/259268#259268">Physics
+    Stack Exchange.</a>
+  </li>
 </ul>
 
 </div>
@@ -281,15 +302,14 @@ substantially.</p>
 </div>
 
 
-<?php 
+<?php
   include "spacefooter.php";
 ?>
 
-<?php 
+<?php
   include "spacehelp.php";
 ?>
 
 
 </body>
 </html>
-

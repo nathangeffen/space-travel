@@ -1,4 +1,4 @@
-/*    
+/*
    This file implements the Traveler class. It manages the time and
    length dilation form and calculates time and length dilations.
 */
@@ -14,23 +14,23 @@ PARSEC = 30856780000000000;
 
 function Traveler(form) {
 
-    /* 
-       This data structure is parsed by the main loop of the programme to 
+    /*
+       This data structure is parsed by the main loop of the programme to
        generate the calculator form and carry out the calculations.
     */
 
     this.fields = {
-        distance : 
+        distance :
         {
             lbl :  "Distance",
             value : "",
             calc: calcTotalDistance,
             parameters : ["observer_time", "acceleration"],
-            units: 
+            units:
             {
-                "meters": 1, 
-                "kilometers": 1000, 
-                "light-seconds": SPEED_OF_LIGHT, 
+                "meters": 1,
+                "kilometers": 1000,
+                "light-seconds": SPEED_OF_LIGHT,
                 "light-minutes": LIGHT_MINUTE,
                 "astronomical unit" : ASTRONOMICAL_UNIT,
                 "light-years": LIGHT_YEAR,
@@ -44,14 +44,14 @@ function Traveler(form) {
             min_error : "This calculator is quite useless for such small distances. Try travel a bit further.",
             help_text : true
         },
-        acceleration : 
+        acceleration :
         {
             lbl : "Acceleration",
             value : "",
             calc: calcAcceleration,
             parameters : ["distance", "observer_time", "max_velocity"],
             max_missing : 1,
-            units: 
+            units:
             {
                 "m/s^2" : 1,
                 "g" : 9.8
@@ -66,13 +66,13 @@ function Traveler(form) {
             def_val : "9.8",
             help_text : true
         },
-        max_velocity : 
+        max_velocity :
         {
             lbl : "Maximum velocity",
             value : "",
             calc : calcMaxVelocity,
             parameters : ["acceleration", "observer_time"],
-            units : 
+            units :
             {
                 "kilometers per hour" : 0.27777777777777777777,
                 "meters per second" : 1,
@@ -89,13 +89,13 @@ function Traveler(form) {
             max_error : "You have been watching too much Star Trek. Velocity must be less than the speed of light.",
             help_text : true
         },
-        observer_time : 
+        observer_time :
         {
             lbl : "Observer time elapsed during journey",
             value : "",
             calc : calcObserverTime,
             parameters : ["acceleration", "distance"],
-            units : 
+            units :
             {
                 "seconds" : 1,
                 "minutes" : 60,
@@ -109,13 +109,13 @@ function Traveler(form) {
             primary : false,
             help_text : true
         },
-        traveler_time : 
+        traveler_time :
         {
             lbl : "Traveler time elapsed during journey",
             value : "",
             calc : calcTotalTravelerTime,
             parameters : ["acceleration", "distance"],
-            units : 
+            units :
             {
                 "seconds" : 1,
                 "minutes" : 60,
@@ -131,10 +131,10 @@ function Traveler(form) {
         },
         spacecraft_mass :
         {
-            lbl : "Spacecraft mass at launch",
+            lbl : "Payload (spacecraft mass without fuel)",
             value : "",
             calc : null,
-            units : 
+            units :
             {
                 "grams" : 0.001,
                 "kilograms" : 1,
@@ -143,34 +143,34 @@ function Traveler(form) {
             changed : false,
             set : false,
             primary : true,
-            def_val : "2000000",
+            def_val : "25000",
             help_text : true
         },
-        energy : 
+        /*energy :
         {
             lbl : "Energy",
             value : "",
             calc : calcEnergy,
             parameters : ["max_velocity", "spacecraft_mass"],
-            units : 
+            units :
             {
                 "joules" : 1,
                 "btu" : 1055.055853,
                 "kilowatthours" : 3599999.99712,
                 "megajoules" : 1000000,
-                "exajoules" : 1000000000000000000 
+                "exajoules" : 1000000000000000000
             },
             changed : false,
             set : false,
             primary : false,
             help_text : true
-        },
-        fuel_conversion_rate : 
+        },*/
+        fuel_conversion_rate :
         {
             lbl : "Fuel conversion rate",
             value : "",
             calc : calcFuelConversionRate,
-            parameters : ["energy", "fuel_mass"],
+            parameters : ["max_velocity", "spacecraft_mass", "fuel_mass"],
             units :
             {
                 "kg x m x m" : 1
@@ -182,12 +182,13 @@ function Traveler(form) {
             def_val : "0.008",
             help_text : true
         },
-        fuel_mass : 
+        fuel_mass :
         {
             lbl : "Fuel mass",
             value : "",
             calc : calcFuelMass,
-            parameters : ["energy", "fuel_conversion_rate"],
+            parameters : ["max_velocity", "spacecraft_mass",
+			  "fuel_conversion_rate"],
             units :
             {
                 "kg" : 1,
@@ -198,13 +199,13 @@ function Traveler(form) {
             primary : false,
             help_text : true
         },
-        traveler_length : 
+        traveler_length :
         {
             lbl : "Length of spacecraft at start of journey",
             value : "",
             calc : calcTravelerLength,
             parameters : ["observer_length", "max_velocity"],
-            units : 
+            units :
             {
                 "meters" : 1,
                 "millimeters" : 1/100,
@@ -217,13 +218,13 @@ function Traveler(form) {
             def_val : 1,
             help_text : true
         },
-        observer_length : 
+        observer_length :
         {
             lbl : "Shortest length of spacecraft for observer",
             value : "",
             calc : calcMinObserverLength,
             parameters : ["traveler_length", "max_velocity"],
-            units : 
+            units :
             {
                 "meters" : 1,
                 "millimeters" : 1/100,
@@ -236,7 +237,7 @@ function Traveler(form) {
             help_text : true
         }
     };
-    
+
     for (field in this.fields) {
         for (unit in this.fields[field].units) {
             if (this.fields[field].units[unit] == 1) {
@@ -250,19 +251,19 @@ function Traveler(form) {
 
 
 
-/* The processInput function gets the values of all the fields and 
-   determines how many have not been set. 
+/* The processInput function gets the values of all the fields and
+   determines how many have not been set.
 */
 
 Traveler.prototype.processInput = function() {
     clearErrorMessage();
     this.num_undefined = 0;
-    
+
     for (field in this.fields) {
         this.fields[field].set = false;
         if (document.getElementById(field).value) {
-            this.fields[field].value = 
-            document.getElementById(field).value 
+            this.fields[field].value =
+            document.getElementById(field).value
                 * this.fields[field].units[this.fields[field].current_unit];
 
             if (this.fields[field].hasOwnProperty('max_val') &&
@@ -285,8 +286,8 @@ Traveler.prototype.processInput = function() {
     };
 };
 
-/* The processOutput function creates the traveler form fields and sets 
-   them to there calculated values. 
+/* The processOutput function creates the traveler form fields and sets
+   them to there calculated values.
 */
 
 Traveler.prototype.processOutput = function() {
@@ -298,25 +299,25 @@ Traveler.prototype.processOutput = function() {
             if (this.fields[field].hasOwnProperty('def_val')) {
                 this.fields[field].value = this.fields[field].def_val;
                 value = this.fields[field].def_val;
-            } 
+            }
             else {
                 value = "";
             }
         } else {
-            value = this.fields[field].value  
+            value = this.fields[field].value
                 / this.fields[field].units[this.fields[field].current_unit];
         }
 
         html_snippet  += '<div class="form-line">'
-            + '<label for="' 
+            + '<label for="'
             + field + '">' + this.fields[field].lbl + '</label>'
-            + '<input id="' + field +'" type="text" value="' 
+            + '<input id="' + field +'" type="text" value="'
             + value + '" '
             + 'onchange="Traveler.prototype.setChanged(this, traveler)"'
             + 'onkeyup="Traveler.prototype.keyup(this, traveler)"'
             + '></input>';
 
-        html_snippet += '<select id="' + field + '-units"' + 
+        html_snippet += '<select id="' + field + '-units"' +
             'onchange="Traveler.prototype.updateMetric(this, traveler)"' + '>';
         for (unit in this.fields[field].units) {
             html_snippet += '<option ';
@@ -325,7 +326,7 @@ Traveler.prototype.processOutput = function() {
             }
             html_snippet += '>' + unit + '</option>';
         }
-        html_snippet += "</select>" 
+        html_snippet += "</select>"
         if (this.fields[field].help_text) {
             if (document.getElementById("help-"+field)) {
                 html_snippet += '&nbsp;<span '
@@ -348,7 +349,7 @@ Traveler.prototype.processOutput = function() {
         }
         document.getElementById("flds").innerHTML = html_snippet;
     }
-    for (field in this.fields) 
+    for (field in this.fields)
         this.fields[field].changed = false;
     document.forms[0].elements[0].focus();
 };
@@ -356,8 +357,8 @@ Traveler.prototype.processOutput = function() {
 
 /* The calculate function gets all the input values and then
    calls the calculation function for the undefined or unchanged
-   secondary fields. It iterates over the fields twice in case a 
-   calculation on the first iteration of field x makes it possible 
+   secondary fields. It iterates over the fields twice in case a
+   calculation on the first iteration of field x makes it possible
    for field y to be calculated on the second iteration.
 */
 Traveler.prototype.calculate = function() {
@@ -367,7 +368,7 @@ Traveler.prototype.calculate = function() {
             changed = false;
             for (f in this.fields) {
                 if (this.fields[f].set) continue;
-                if (((!this.fields[f].value || 
+                if (((!this.fields[f].value ||
                       (!this.fields[f].changed && !this.fields[f].primary) )) &&
                     this.fields[f].calc) {
                     var missing = 0;
@@ -375,8 +376,8 @@ Traveler.prototype.calculate = function() {
                     for (i = 0; i < this.fields[f].parameters.length; i++) {
                         parm = this.fields[f].parameters[i]
                         if (this.fields[parm].value &&
-                            (this.fields[parm].changed || 
-                             this.fields[parm].primary || 
+                            (this.fields[parm].changed ||
+                             this.fields[parm].primary ||
                              this.fields[parm].set)) {
                             parameters[parm] = this.fields[parm].value;
                         } else {
@@ -391,7 +392,7 @@ Traveler.prototype.calculate = function() {
                         this.fields[f].value = this.fields[f].calc(parameters);
                     }
                 }
-                
+
             }
         } while (changed);
         this.processOutput();
@@ -404,7 +405,7 @@ Traveler.prototype.calculate = function() {
   Clears the calculator form and sets fields to their default values.
 */
 
-Traveler.prototype.clear = function() 
+Traveler.prototype.clear = function()
 {
     for (f in this.fields) {
         if (this.fields[f].def_val) {
@@ -421,7 +422,7 @@ Traveler.prototype.clear = function()
   the field has been changed.
 */
 Traveler.prototype.setChanged = function(e, t) {
-    t.fields[e.id].changed = true; 
+    t.fields[e.id].changed = true;
 }
 
 /*
@@ -431,8 +432,8 @@ Traveler.prototype.setChanged = function(e, t) {
 
 Traveler.prototype.keyup = function(e, t) {
     if (t.fields[e.id].ajaxValues) {
-        Traveler.prototype.showFieldValues(e.value, 
-                                           t, 
+        Traveler.prototype.showFieldValues(e.value,
+                                           t,
                                            e.id,
                                            t.fields[e.id].ajaxValues);
     }
@@ -440,7 +441,7 @@ Traveler.prototype.keyup = function(e, t) {
 
 /*
   This function implements an AJAX call to the server to allow the user
-  to select values for the current field. 
+  to select values for the current field.
 */
 
 Traveler.prototype.showFieldValues = function(str, t, id, table) {
@@ -460,10 +461,10 @@ Traveler.prototype.showFieldValues = function(str, t, id, table) {
             if (xmlhttp.readyState==4 && xmlhttp.status==200)
             {
                 options = JSON.parse(xmlhttp.responseText);
-                $( "#" +id ).autocomplete({ 
+                $( "#" +id ).autocomplete({
                     minLength: 0,
                     delay: 20,
-                    select: function(event, ui) { 
+                    select: function(event, ui) {
                         unit = t.fields[id].current_unit;
                         denominator = t.fields[id].units[unit];
                         ui.item.value = ui.item.value / denominator;
@@ -474,7 +475,7 @@ Traveler.prototype.showFieldValues = function(str, t, id, table) {
         };
 
         xmlhttp.open("GET","spacetravel.php?field=" + table +"&value="+str,true);
-        xmlhttp.send();            
+        xmlhttp.send();
     };
 }
 
@@ -485,14 +486,14 @@ Traveler.prototype.showFieldValues = function(str, t, id, table) {
 
 Traveler.prototype.updateMetric = function(e, t) {
     field = e.id.substring(0, e.id.lastIndexOf("-unit"));
-    value = document.getElementById(field).value; 
-    oldUnit = t.fields[field].current_unit; 
+    value = document.getElementById(field).value;
+    oldUnit = t.fields[field].current_unit;
     t.fields[field].current_unit = e.value;
 
     if (value) {
         oldUnitValue = t.fields[field].units[oldUnit];
         newUnitValue = t.fields[field].units[e.value];
-        document.getElementById(field).value = value * 
+        document.getElementById(field).value = value *
             oldUnitValue / newUnitValue;
     }
 };
@@ -517,7 +518,7 @@ calcTotalDistance = function(parameters) {
 
 calcDistance = function(parameters) {
     calcDist = function(observerTime, velocity) {
-        // Formula from: 
+        // Formula from:
         // http://www.mrelativity.net/MBriefs/Most%20Direct%20Derivation%20of%20Relativistic%20Constant%20Acceleration%20Distance%20Formula.htm
         // Which is:
         // distance = c*max_vel*T_obs / c + sqrt(c^2-max_vel^2)
@@ -526,13 +527,13 @@ calcDistance = function(parameters) {
         lorentz = Math.sqrt(
             SPEED_OF_LIGHT_SQUARED - velocity * velocity);
         result = numerator / (SPEED_OF_LIGHT + lorentz);
-        return result;        
+        return result;
     }
     savedObserverTimeElapsed = parameters["observer_time_elapsed"];
     if (parameters["observer_time_elapsed"] > parameters["observer_time"] / 2) {
-        totalDistance = calcDist(parameters["observer_time"], 
+        totalDistance = calcDist(parameters["observer_time"],
                                    calcMaxVelocity(parameters));
-        parameters["observer_time_elapsed"] = parameters["observer_time"] - 
+        parameters["observer_time_elapsed"] = parameters["observer_time"] -
             parameters["observer_time_elapsed"];
         velocity = calcVelocity(parameters);
         subtractDistance = calcDist(parameters["observer_time_elapsed"],
@@ -581,12 +582,12 @@ calcVelocity = function(parameters) {
     timeProportionSq = 1 / (observedTimeProportion * observedTimeProportion);
 
     k = SPEED_OF_LIGHT_SQUARED / parameters["acceleration"];
-    denominator = parameters["acceleration"] * 
+    denominator = parameters["acceleration"] *
         parameters["observer_time"] * parameters["observer_time"] / timeProportionSq;
     second_sqrt_term = k / denominator;
     sqrt_term = 1 + second_sqrt_term;
     result = SPEED_OF_LIGHT / Math.sqrt(sqrt_term);
-    return result;    
+    return result;
 }
 
 calcObserverTime = function(parameters) {
@@ -607,19 +608,19 @@ calcTotalTravelerTime = function(parameters)
     return result;
 }
 
-calcTravelerTime = function(parameters) 
+calcTravelerTime = function(parameters)
 {
-    result = parameters["observer_time_elapsed"] * 
-            Math.sqrt(1 - 
-                      parameters["velocity"] * 
-                      parameters["velocity"] / 
-                      SPEED_OF_LIGHT_SQUARED); 
+    result = parameters["observer_time_elapsed"] *
+            Math.sqrt(1 -
+                      parameters["velocity"] *
+                      parameters["velocity"] /
+                      SPEED_OF_LIGHT_SQUARED);
     return result;
 }
 
 calcEnergy = function(parameters)
 {
-    vel_over_c_sq = parameters["max_velocity"] * 
+    vel_over_c_sq = parameters["max_velocity"] *
         parameters["max_velocity"] / SPEED_OF_LIGHT_SQUARED;
     sqrt_term = 1 - vel_over_c_sq;
     denominator = Math.sqrt(sqrt_term);
@@ -628,44 +629,50 @@ calcEnergy = function(parameters)
     return result;
 }
 
-calcFuelConversionRate = function(parameters) 
+calcFuelConversionRate = function(parameters)
 {
-    return parameters["energy"] / (parameters["fuel_mass"] * SPEED_OF_LIGHT_SQUARED);
+    vel_to_c = parameters["max_velocity"] / SPEED_OF_LIGHT;
+    per_kg_100percent = 2 * vel_to_c / (1 - vel_to_c);
+    perfect_efficient = per_kg_100percent * parameters["spacecraft_mass"];
+    return perfect_efficient / parameters["fuel_mass"];
 }
 
 calcFuelMass = function(parameters)
 {
-    return parameters["energy"] / (parameters["fuel_conversion_rate"] * SPEED_OF_LIGHT_SQUARED);
+    vel_to_c = parameters["max_velocity"] / SPEED_OF_LIGHT;
+    per_kg_100percent = 2 * vel_to_c / (1 - vel_to_c);
+    return per_kg_100percent * parameters["spacecraft_mass"] /
+	parameters["fuel_conversion_rate"];
 }
 
 calcMinObserverLength = function(parameters) {
     velocity_sq = parameters["max_velocity"] * parameters["max_velocity"];
-    result =  parameters["traveler_length"] * 
+    result =  parameters["traveler_length"] *
         Math.sqrt(1 - velocity_sq / SPEED_OF_LIGHT_SQUARED);
     return result;
 }
 
-calcObserverLength = function(parameters) {    
+calcObserverLength = function(parameters) {
     velocity_sq = parameters["velocity"] * parameters["velocity"];
-    result =  parameters["traveler_length"] * 
+    result =  parameters["traveler_length"] *
         Math.sqrt(1 - velocity_sq / SPEED_OF_LIGHT_SQUARED);
     return result;
 }
 
 
-calcTravelerLength = function(parameters) {    
-    velocity_sq = parameters["max_velocity"] * parameters["max_velocity"];    
-    result =  parameters["observer_length"] / 
+calcTravelerLength = function(parameters) {
+    velocity_sq = parameters["max_velocity"] * parameters["max_velocity"];
+    result =  parameters["observer_length"] /
         Math.sqrt(1 - velocity_sq /  SPEED_OF_LIGHT_SQUARED);
     return result;
 }
 
 function acosh (arg) {
-    // Returns the inverse hyperbolic cosine of the number, 
-    // i.e. the value whose hyperbolic cosine is number  
-    // 
+    // Returns the inverse hyperbolic cosine of the number,
+    // i.e. the value whose hyperbolic cosine is number
+    //
     // version: 1109.2015
-    // discuss at: http://phpjs.org/functions/acosh    
+    // discuss at: http://phpjs.org/functions/acosh
     // +   original by: Onno Marsman
     // *     example 1: acosh(8723321.4);
     // *     returns 1: 16.674657798418625
@@ -676,7 +683,7 @@ function acosh (arg) {
 /*
   Puts an error message in the error id selector.
 */
-setErrorMessage = function(str) 
+setErrorMessage = function(str)
 {
     document.getElementById("error").innerHTML += "<p>" + str + "</p>";
 };
@@ -701,7 +708,7 @@ toggleVisibility = function(text, help) {
         document.getElementById(text).style.display="block";
         document.getElementById(help).innerHTML = "?-";
     } else {
-        document.getElementById(text).style.display="none";    
+        document.getElementById(text).style.display="none";
         document.getElementById(help).innerHTML = "?+";
     }
 }

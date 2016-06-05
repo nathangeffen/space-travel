@@ -45,7 +45,7 @@ Formula
 
 This is the constant acceleration of the traveler&#39;s spacecraft.
 Half way through the journey, the spacecraft starts decelerating
-at the same rate. 
+at the same rate.
 
 </p>
 
@@ -101,9 +101,9 @@ the spacecraft, no matter what kind of fuel is used.
 This is the maximum velocity the spacecraft will reach, from the
 perspective of an observer on earth. This occurs when the spacecraft is
 half way to its destination. This is calculated using this
-equation: 
+equation:
 
-</p> 
+</p>
 
 
 <?php
@@ -115,7 +115,7 @@ echo(shell_exec('tail -n +2 eq5.mml'));
 &nbsp;&nbsp;&nbsp;where<br /> &nbsp;&nbsp;&nbsp;&nbsp;c = speed of
 light,<br /> &nbsp;&nbsp;&nbsp;&nbsp;a = acceleration and<br />
 &nbsp;&nbsp;&nbsp;&nbsp;t = time elapsed to end of journey in observer
-timeframe. 
+timeframe.
 
 </p>
 
@@ -131,7 +131,7 @@ This Week</a>.
 <p>
 
 This is the time elapsed for the whole journey from the observer on
-earth&#39;s time frame. This is calculated using this equation: 
+earth&#39;s time frame. This is calculated using this equation:
 
 </p>
 
@@ -141,9 +141,9 @@ echo(shell_exec('tail -n +2 eq6.mml'));
 
 <p>
 
-&nbsp;&nbsp;&nbsp;where<br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;c = speed of light,<br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;d = distance of the journey and<br /> 
+&nbsp;&nbsp;&nbsp;where<br />
+&nbsp;&nbsp;&nbsp;&nbsp;c = speed of light,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;d = distance of the journey and<br />
 &nbsp;&nbsp;&nbsp;&nbsp;a = acceleration.
 
 </p>
@@ -161,7 +161,7 @@ This Week</a>.
 <p>
 
 This is the time elapsed for the whole journey from the perspective of
-the spacecraft.  This is calculated using this equation: 
+the spacecraft.  This is calculated using this equation:
 
 </p>
 
@@ -171,9 +171,9 @@ echo(shell_exec('tail -n +2 eq7.mml'));
 
 <p>
 
-&nbsp;&nbsp;&nbsp;where<br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;c = speed of light,<br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;d = distance of the journey and<br /> 
+&nbsp;&nbsp;&nbsp;where<br />
+&nbsp;&nbsp;&nbsp;&nbsp;c = speed of light,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;d = distance of the journey and<br />
 &nbsp;&nbsp;&nbsp;&nbsp;a = acceleration.
 
 </p>
@@ -191,18 +191,16 @@ This Week</a>.
 
 <p>
 
-This is the total mass of the spacecraft and its contents including
-fuel. The default value of 2,000,000kg is the <a href="http://www.nasa.gov/returntoflight/system/system_STS.html">
-mass of the space shuttle</a>
-when it takes off, including all its fuel.
+This is the mass of the spacecraft excluding its fuel. The default value of
+25,000kg is approximately the <a href="http://www.esa.int/Our_Activities/Human_Spaceflight/Space_Shuttle/Shuttle_technical_facts">maximum payload of the Endeavour space shuttle</a>.
 
 </p>
 
 <p>
 
 Note that if this field is blanked out it is not calculated.
-This field must have a value if you want energy and 
-fuel mass to be calculated. 
+This field must have a value if you want energy and
+fuel mass to be calculated.
 
 </p>
 
@@ -223,10 +221,10 @@ books and episodes of Star Trek to last the rest of your life.
 
 <p>
 
-This is the amount of energy your spacecraft will need to constantly
+This is the amount of energy your spacecraft's payload will need to constantly
 accelerate to half way to your destination and then decelerate at the
-same rate until you reach your destination. This is calculated using 
-this equation: 
+same rate until you reach your destination. This is calculated using
+this equation:
 
 </p>
 
@@ -236,7 +234,7 @@ echo(shell_exec('tail -n +2 eq8.mml'));
 
 <p>
 
-&nbsp;&nbsp;&nbsp;where<br /> 
+&nbsp;&nbsp;&nbsp;where<br />
 &nbsp;&nbsp;&nbsp;&nbsp;c = speed of light,<br />
 &nbsp;&nbsp;&nbsp;&nbsp;v = maximum velocity and<br />
 &nbsp;&nbsp;&nbsp;&nbsp;m = spacecraft mass.
@@ -269,18 +267,18 @@ nuclear fusion are needed first.
 The default fuel conversion rate of 0.008 is for hydrogen into helium
 fusion. David Oesper explains that this rate assumes 100% of the fuel
 goes into propelling the spacecraft, but there will be energy losses
-which will require a greater amount of fuel than this. This is 
-calculated using this equation: </p>
-
-<?php
-echo(shell_exec('tail -n +2 eq9.mml'));
-?>
+which will require a greater amount of fuel than this.</p>
 
 <p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;e = energy,<br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;m = fuel mass and<br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;c = speed of light.
+If you leave this field blank but enter the fuel mass, it is calculated by
+dividing the given fuel mass by what the fuel mass would be if it were perfectly
+efficient (i.e. a conversion rate of 1.0).
+
+<p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;e = energy,<br /> &nbsp;&nbsp;&nbsp;&nbsp;m = fuel mass
+and<br /> &nbsp;&nbsp;&nbsp;&nbsp;c = speed of light.
 
 </p>
 
@@ -295,8 +293,8 @@ This Week</a>.
 
 <p>
 
-This is the mass of the fuel needed to for your journey. 
-This is calculated using this equation: 
+This is the mass of the fuel needed to for your journey.
+This is calculated using this equation:
 
 </p>
 
@@ -305,14 +303,15 @@ echo(shell_exec('tail -n +2 eq10.mml'));
 ?>
 
 <p>
-&nbsp;&nbsp;&nbsp;&nbsp;e = energy,<br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;r = fuel conversion rate and<br /> 
+&nbsp;&nbsp;&nbsp;&nbsp;v = maximum velocity and<br />
 &nbsp;&nbsp;&nbsp;&nbsp;c = speed of light.
 </p>
 
 <p>
-Source: <a href='http://www.skythisweek.info/constant1g.pdf'>The Sky
-This Week</a>.
+Source: <a href="http://math.ucr.edu/home/baez/physics/Relativity/SR/Rocket/rocket.html">The Relativistic Rocket</a> and <a href='http://physics.stackexchange.com/a/259268'>Physics Stack
+    Exchange.</a> (Thanks to users user2096078,
+    Qmechanic and udrv. Also thanks to John F for informing me of a bug that has
+    now hopefully been corrected.)
 </p>
 
 </div>
@@ -322,8 +321,8 @@ This Week</a>.
 <p>
 
 This is the length of the spacecraft at the beginning of the journey.
-Note that the spacecraft length always stays the same for the people in it. 
-This is calculated using this equation: 
+Note that the spacecraft length always stays the same for the people in it.
+This is calculated using this equation:
 
 </p>
 
@@ -333,7 +332,7 @@ echo(shell_exec('tail -n +2 eq11.mml'));
 
 <p>
 
-&nbsp;&nbsp;&nbsp;where<br /> 
+&nbsp;&nbsp;&nbsp;where<br />
 &nbsp;&nbsp;&nbsp;&nbsp;l = length of traveler from observer&#39;s perspective,<br />
 &nbsp;&nbsp;&nbsp;&nbsp;v = maximum velocity of traveler and<br />
 &nbsp;&nbsp;&nbsp;&nbsp;c = speed of light.
@@ -352,9 +351,9 @@ Source: <a href='http://hyperphysics.phy-astr.gsu.edu/hbase/relativ/tdil.html'>H
 
 <p>
 
-This is the length of the spacecraft from the observer on earth&#39;s 
-perspective. Of course spacecrafts are small, so it would be impossible 
-to see a spacecraft from earth on an interstellar voyage. This is 
+This is the length of the spacecraft from the observer on earth&#39;s
+perspective. Of course spacecrafts are small, so it would be impossible
+to see a spacecraft from earth on an interstellar voyage. This is
 calculated using this equation: </p>
 
 <?php
@@ -363,7 +362,7 @@ echo(shell_exec('tail -n +2 eq12.mml'));
 
 <p>
 
-&nbsp;&nbsp;&nbsp;where<br /> 
+&nbsp;&nbsp;&nbsp;where<br />
 &nbsp;&nbsp;&nbsp;&nbsp;l<sub>0</sub> = original length of spacecraft on earth,<br />
 &nbsp;&nbsp;&nbsp;&nbsp;v = maximum velocity of traveler and<br />
 &nbsp;&nbsp;&nbsp;&nbsp;c = speed of light.
