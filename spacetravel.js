@@ -138,7 +138,7 @@ function Traveler(form) {
             {
                 "grams" : 0.001,
                 "kilograms" : 1,
-                "tons" : 1000
+                "tonnes" : 1000
             },
             changed : false,
             set : false,
@@ -192,7 +192,7 @@ function Traveler(form) {
             units :
             {
                 "kg" : 1,
-                "tons" : 1000
+                "tonnes" : 1000
             },
             changed : false,
             set : false,
