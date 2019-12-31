@@ -1,158 +1,156 @@
-body { 
-    background: #fff; 
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 14px;
+body {
+    max-width: 750px;
+    margin: auto;
+    font-family: Helvetica, Arial, sans-serif;
+    padding-top: 24px;
+    color:  #333333;
+    background-color: #ffffff;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 18px;
+    line-height: 1.5em;
 }
 
-#content {
-    padding-left: 15%;
-    width: 70%;
+a {
+    text-decoration: none;
 }
 
-.text {
-    padding-left: 20%;
-    width: 50%;
+h1 {
+    max-width: 600px;
+    font-size: 1.6em;
+    line-height: 1.25em;
 }
 
-#quick-help {
+h2 {
+    max-width: 600px;
+    font-size: 1.3em;
+    line-height: 1.2em;
+}
+
+p, ul, ol {
+    margin-top: 22px;
+    margin-bottom: 22px;
+    max-width: 600px;
+}
+
+ul, ol {
+    padding-left: 10px;
+    margin-left: 14px;
+}
+
+li {
+    margin-bottom: 18px;
+}
+
+p#byline {
+    font-style: italic;
+}
+
+p#dateline {
     font-size: 12px;
-    float: right;
-    width: 20%;
-    padding: 2px;
-/*    top:90px;
-    right:1%;
-
-*/
-
-    border-style: solid;
-    border-width: 1px;
 }
 
-.help-text {
-    padding-left: 25%;
-    width: 65%;
+pre {
+    font-size: 0.7em;
 }
 
-#banner {
-    padding: 3px;
-    margin: 0px;
-    background: #DCDAE5;
+img {
+    margin-top: 22px;
+    margin-bottom: 22px;
 }
 
-h1#main_heading {
-    font-size: 22px;
-    text-align: center;
-/*    padding-left: 37%;*/
+img.fit {
+    max-width: 600px;
 }
 
-#error {
-    color: red;
+nav {
+    border-bottom: 1px solid lightgray;
+    max-width: 600px;
 }
 
-#traveler-form {
-    margin-bottom: 20px;
+nav ul {
+    font-size: 16px;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right:0;
 }
 
-.formstyle {
-    width: 800px;
+nav li {
+    display: inline;
+    padding-right: 1px;
 }
 
-.form-line {
-    line-height: 28px;
+nav li::after {
+    content: "|";
+}
+nav li:last-child::after {
+    content: "";
 }
 
-.formstyle label {
-    display:block;
-    text-align: right;
-    width: 290px;
-    clear: left;
-    float:left;
-    padding-right: 5px;
+label {
+    display: block;
 }
 
-.widget {
-    float:left;
-    clear: left;
-    width: 550px;
-}
-
-.formstyle input {
-    width: 220px;
-}
-
-select {
-    background-color:#ddd;
-    width: 190px;
-}
-
-.help-symbol {
-    width: 5px !important;
-    color: blue;
-    cursor:move;
-}
-
-.help-symbol:hover {
-    text-decoration: underline;
-}
-
-.help-text {
-    padding-left: 200px;
-}
-
-
-#buttons {
-    margin-top: 5px;
-    padding-left: 292px;
-}
-
-#animate-button, .formstyle button {
-    float: left;
-    margin-right: 15px;
-    width:125px;
-    height:31px;
-    text-align:center;
-    line-height:31px;
-    font-weight:bold;
-    background-color:#ddd;
-}    
-
-#svg-viewer {
-    border-style: solid;
-    border-width: 2px;
-    padding: 5px;
-}
-
-#animation {
-    clear: both;
-    float: left;
-    padding: 10px 0px 10px 0px;
-    width: 1000px;
-}
-
-#bug-list {
-    clear: both;
-}
-
-#footer {
-    clear: both;
-    padding: 3px;
-    margin: 0px;
-    background: #DCDAE5;
-}
-
-#footer p {
-/*    padding-left: 20%;*/
-    text-align: center;
-}
-
-#menu ul
-{
-    text-align: center;
-    list-style-type: none;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
     margin: 0;
 }
 
-#menu ul li {
-    display: inline;    
-    padding-right: 20px;
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+input[type=submit] {
+    display: block;
+    margin-top: 12px;
+}
+
+
+input {
+    min-height: 2.2em;
+}
+
+#messages {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+#messages li {
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#messages li.success {
+    background-color: #DFF2BF;
+}
+
+#messages li.info {
+    background-color: #BDE5F8;
+}
+
+#messages li.warning {
+    background-color: #FEEFB3;
+}
+
+#messages li.error {
+    background-color: #FFD2D2;
+}
+
+ul.errorlist {
+    padding: 0;
+}
+.errorlist li {
+    padding: 0;
+    list-style: none;
+    color: #D8000C;
+}
+
+
+footer {
+    border-top: 1px solid lightgray;
 }

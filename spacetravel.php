@@ -51,6 +51,8 @@ if(isset($_GET["field"]) && !empty($_GET["field"]) &&
 <head>
 
 <meta charset="utf-8">
+<meta name=viewport content="width=device-width, initial-scale=1">
+
 <meta content="relativity, Einstein, time dilation, length dilation" name="keywords">
 <meta content="Space travel calculator" name="description">
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
