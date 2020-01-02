@@ -220,7 +220,7 @@ function Traveler(form) {
         },
         observer_length :
         {
-            lbl : "Shortest length of spacecraft for observer",
+            lbl : "Shortest spacecraft length for observer",
             value : "",
             calc : calcMinObserverLength,
             parameters : ["traveler_length", "max_velocity"],
@@ -439,6 +439,7 @@ Traveler.prototype.keyup = function(e, t) {
     }
 }
 
+
 /*
   This function implements an AJAX call to the server to allow the user
   to select values for the current field.
@@ -448,35 +449,33 @@ Traveler.prototype.showFieldValues = function(str, t, id, table) {
     var options = [];
     var alpha = /^([a-zA-Z ]+)/;
 
-    if (alpha.test(str)==true) {
-        if (window.XMLHttpRequest) {
-            xmlhttp=new XMLHttpRequest();
-        } else {
-            return;
-        }
+    if (window.XMLHttpRequest) {
+        xmlhttp=new XMLHttpRequest();
+    } else {
+        return;
+    }
 
-        xmlhttp.onreadystatechange=function()
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
-
-            if (xmlhttp.readyState==4 && xmlhttp.status==200)
-            {
-                options = JSON.parse(xmlhttp.responseText);
-                $( "#" +id ).autocomplete({
-                    minLength: 0,
-                    delay: 20,
-                    select: function(event, ui) {
-                        unit = t.fields[id].current_unit;
-                        denominator = t.fields[id].units[unit];
-                        ui.item.value = ui.item.value / denominator;
-                    },
-		            source: options
-	            });
-            }
-        };
-
-        xmlhttp.open("GET","spacetravel.php?field=" + table +"&value="+str,true);
-        xmlhttp.send();
+            options = JSON.parse(xmlhttp.responseText);
+            console.log(options);
+            $( "#" +id ).autocomplete( {
+                minLength: 0,
+                delay: 20,
+                select: function(event, ui) {
+                    unit = t.fields[id].current_unit;
+                    denominator = t.fields[id].units[unit];
+                    ui.item.value = ui.item.value / denominator;
+                },
+		source: options
+	    });
+        }
     };
+
+    xmlhttp.open("GET","spacetravel.php?field=" + table +"&value="+str,true);
+    xmlhttp.send();
 }
 
 /*

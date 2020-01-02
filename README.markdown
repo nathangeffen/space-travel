@@ -10,7 +10,7 @@ The space travel calculator uses special relativity equations to calculate from 
 It also includes a simplistic visualisation of the journey.
 
 The space travel calculator is implemented here:
-http://spacetravel.nathangeffen.webfactional.com/spacetravel.php
+https://spacetravel.simhub.online/
 
 ## Caution
 
@@ -63,8 +63,6 @@ redirects you to *spacetravel.php*.
 
 ## Authors
 
-The Space Travel calculator was written by [Nathan Geffen](http://nathangeffen.webfactional.com/).
+The Space Travel calculator was written by [Nathan Geffen](http://www.simhub.online/cv).
 
 Faizel Slamang drew the robot used in the simulation.
-
-
