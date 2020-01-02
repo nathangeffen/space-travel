@@ -5,7 +5,7 @@
         <ul>
             <li>
                 <a href="https://www.simhub.online">
-                    Simhub
+                    Home
                 </a>
             </li>
             <li>
