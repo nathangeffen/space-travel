@@ -57,7 +57,7 @@ if(isset($_GET["field"]) && !empty($_GET["field"]) &&
 <meta content="Space travel calculator" name="description">
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link type="text/css" href="spacetravel.css" rel="stylesheet">
+<link type="text/css" href="spacetravel-2020.css" rel="stylesheet">
 <title>Space travel calculator</title>
 
 <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="Stylesheet" />
