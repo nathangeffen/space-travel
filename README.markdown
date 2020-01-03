@@ -63,6 +63,6 @@ redirects you to *spacetravel.php*.
 
 ## Authors
 
-The Space Travel calculator was written by [Nathan Geffen](http://www.simhub.online/cv).
+The Space Travel calculator was written by [Nathan Geffen](https://www.simhub.online/cv).
 
 Faizel Slamang drew the robot used in the simulation.
