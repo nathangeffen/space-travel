@@ -351,7 +351,6 @@ Traveler.prototype.processOutput = function() {
     }
     for (field in this.fields)
         this.fields[field].changed = false;
-    document.forms[0].elements[0].focus();
 };
 
 
