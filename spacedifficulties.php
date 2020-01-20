@@ -7,7 +7,9 @@
 <meta content="Space travel calculator" name="description">
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link type="text/css" href="spacetravel.css" rel="stylesheet">
+<link type="text/css"
+      href="https://www.simhub.online/static/blog/css/styles.css"
+      rel="stylesheet">
 <title>Space travel difficulties</title> 
 
 <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="Stylesheet" />	
