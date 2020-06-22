@@ -1,0 +1,224 @@
+body {
+    max-width: 750px;
+    margin: auto;
+    font-family: Helvetica, Arial, sans-serif;
+    padding-top: 24px;
+    color:  #333333;
+    background-color: #ffffff;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    max-width: 600px;
+    font-size: 1.6em;
+    line-height: 1.25em;
+}
+
+h2 {
+    max-width: 600px;
+    font-size: 1.3em;
+    line-height: 1.2em;
+}
+
+p, ul, ol {
+    margin-top: 22px;
+    margin-bottom: 22px;
+    max-width: 600px;
+}
+
+ul, ol {
+    padding-left: 10px;
+    margin-left: 14px;
+}
+
+li {
+    margin-bottom: 18px;
+}
+
+p#byline {
+    font-style: italic;
+}
+
+p#dateline {
+    font-size: 12px;
+}
+
+pre {
+    font-size: 0.7em;
+}
+
+img {
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+img.fit {
+    max-width: 600px;
+}
+
+nav {
+    border-bottom: 1px solid lightgray;
+}
+
+nav ul {
+    font-size: 16px;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right:0;
+}
+
+nav li {
+    display: inline;
+    padding-right: 1px;
+}
+
+nav li::after {
+    content: "|";
+}
+nav li:last-child::after {
+    content: "";
+}
+
+label {
+    display: block;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+input[type=submit] {
+    display: block;
+    margin-top: 12px;
+}
+
+
+input {
+    min-height: 2.2em;
+}
+
+#messages {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+#messages li {
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#messages li.success {
+    background-color: #DFF2BF;
+}
+
+#messages li.info {
+    background-color: #BDE5F8;
+}
+
+#messages li.warning {
+    background-color: #FEEFB3;
+}
+
+#messages li.error {
+    background-color: #FFD2D2;
+}
+
+ul.errorlist {
+    padding: 0;
+}
+.errorlist li {
+    padding: 0;
+    list-style: none;
+    color: #D8000C;
+}
+
+
+.help-symbol {
+    width: 5px !important;
+    color: blue;
+    cursor:move;
+}
+
+.help-text {
+    border: 1px solid lightgray;
+    padding: 6px;
+    font-size: 0.8em;
+}
+
+#traveler-form, #animation {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+@media (min-width: 800px) {
+
+    #traveler-form label {
+        display:block;
+        text-align: right;
+        width: 249px;
+        clear: left;
+        float:left;
+        padding-right: 5px;
+        font-size: 0.8em;
+    }
+
+    #traveler-form input {
+        margin-right: 3px;
+    }
+    #buttons {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        padding-left: 249px;
+    }
+
+    #animation label {
+        margin-top: 3px;
+        font-size: 0.8em;
+        display: inline;
+    }
+}
+
+@media (max-width: 799px) {
+    #traveler-form label {
+        padding-top: 6px;
+    }
+    #traveler-form input {
+        margin-right: 3px;
+        width: 25%;
+    }
+    #buttons {
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+}
+
+
+#animation button {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+
+footer {
+    border-top: 1px solid lightgray;
+}
