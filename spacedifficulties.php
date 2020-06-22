@@ -8,7 +8,7 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link type="text/css"
-      href="https://www.simhub.online/static/blog/css/styles.css"
+      href="styles.css"
       rel="stylesheet">
 <title>Space travel difficulties</title> 
 
